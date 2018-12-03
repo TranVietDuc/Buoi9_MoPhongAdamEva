@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function applePrototype(defaultWeight=10)
+    {
+        this.weight = defaultWeight;
+        this.getWeight = function(){
+            return this.weight;
+        };
+        this.decrease = function(){
+            if(this.weight > 0){
+                this.weight --;
+            }
+        };
+
+        this.isEmpty = function () {
+            if(this.weight == 0){
+                alert("Apple is empty, cannot eat more!");
+            }
+        };
+    }
+    function human(name,gender,weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        this.isMale = function(){
+            if (this.gender === "Male") return 1;
+            else if (this.gender === "Female") return 0;
+        };
+        this.checkApple = function(Apple){
+            this.apple = Apple;
+        };
+        this.say = function () {
+            console.log("HI! My name is" + this.name + "my weight is :" + this.weight + "and, I'm the only " + this.gender + " on the World" )
+        };
+        this.eat = function(){
+            this.apple.isEmpty();
+            this.weight++;
+            this.apple.decrease();
+        }
+
+
+    }
+
+</script>
+</body>
+</html>
